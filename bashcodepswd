@@ -1,0 +1,20 @@
+#! /bin/bash
+read -s -p "enter the password" st
+length=${#st}
+num=$( echo $st | grep  "[0-9]" )
+num1=$( echo $st | grep "[\@$\#%\&*+-=]" )
+if [ $length -ge 8 ] 
+then
+      if [ "$num" == "$st" ] && [ "$num1" == "$st" ]
+    then
+  echo "  "
+      echo "strong password"
+    
+    else
+echo "   "
+     echo "weak password"
+     fi
+else 
+echo "   "
+echo "weak password"
+fi
